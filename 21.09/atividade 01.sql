@@ -44,7 +44,7 @@ value ("Daniel", 3000, 2100, "espada", 1),
 
 select * from tb_personagem where poderAtaque > 2000
 
-select * from tb_personagem where poderDefesa > 1000 and poderDefesa < 2000
+select * from tb_personagem where poderDefesa between 1000 and 2000;
 
 select * from tb_personagem where nome like "%C%"
 
