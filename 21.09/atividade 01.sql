@@ -30,7 +30,7 @@ values ("guerreiro", 34, "masculino"),
 ("Assassino", 26, "masculino"),
 ("Arqueiro", 23, "feminino");
 
-select * from tb_classe
+select * from tb_classe;
 
 insert into tb_personagem (nome, poderAtaque, poderDefesa, arma, classe)
 value ("Daniel", 3000, 2100, "espada", 1),
@@ -42,13 +42,12 @@ value ("Daniel", 3000, 2100, "espada", 1),
 ("Cortana", 6500, 900, "facão", 4),
 ("Pedro", 900, 900, "espada", 1);
 
-select * from tb_personagem where poderAtaque > 2000
+select * from tb_personagem where poderAtaque > 2000;
 
 select * from tb_personagem where poderDefesa between 1000 and 2000;
 
-select * from tb_personagem where nome like "%C%"
+select * from tb_personagem where nome like "%C%";
 
-select * from tb_personagem
-inner join tb_classe on tb_personagem.classe = tb_classe.id_classe;
-
-select * from tb_personagem where tb_personagem.classe = 1
+select tb_personagem.nome, tb_personagem.arma, tb_classe.nomeClasse from tb_personagem
+inner join tb_classe on tb_personagem.classe = tb_classe.id_classe
+where tb_personagem.classe = 2;
