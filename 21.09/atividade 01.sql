@@ -17,7 +17,8 @@ create table tb_personagem (
     poderAtaque varchar(255) not null,
     poderDefesa varchar(255) not null,
     arma varchar(255) not null,
-    classe bigint not null,
+    classe bigint null,
+    
     
     primary key (id_personagem),
 	foreign key (classe) references tb_classe (id_classe)
@@ -34,7 +35,7 @@ select * from tb_classe;
 
 insert into tb_personagem (nome, poderAtaque, poderDefesa, arma, classe)
 value ("Daniel", 3000, 2100, "espada", 1),
-("Gabriel", 1000, 5000, "cajado", 2),
+("Gabriel", 1000, 5000, "cajado", 1),
 ("Voldemort", 2500, 6000, "varinha", 2),
 ("Harry", 8000, 1050, "machado", 3),
 ("Kevin", 4500, 4600, "Arco", 5),
@@ -50,4 +51,4 @@ select * from tb_personagem where nome like "%C%";
 
 select tb_personagem.nome, tb_personagem.arma, tb_classe.nomeClasse from tb_personagem
 inner join tb_classe on tb_personagem.classe = tb_classe.id_classe
-where tb_personagem.classe = 2;
+where tb_personagem.classe = 1;
